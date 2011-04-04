@@ -1,1 +1,69 @@
+\section{Description des blocs}
+       \subsection{PERSONNE}
+
+Le bloc applicatif  “Personne” représente les personnes qui existent dans la base de données de la banque (qui sont des clients ou autres) et leur(s) adresse(s). Il est composé des structures de données Personne et Adresse.
+
+L’association “habiter” situé entre les deux structures de données indique qu’une personne peut avoir une ou plusieurs adresses et qu’une adresse peut correspondre à une ou plusieurs personnes.
+
+On intègre dans ce bloc applicatif l’association composer qui indiquera si une personne est un client de la banque. Une personne peut correspondre à 0 ou plusieurs clients de la banque.
+
+       \subsection{CLIENT}
+
+Le bloc applicatif “Client” représente les clients et les liens qu'ils possèdent avec la banque (informations, ..).
+
+La structure Client donne les propriétés du client, qui peut appartenir à différents Segments du bloc applicatif Produit.
+
+Chaque Client est titulaire d'au moins un Compte bancaire.
+
+Le Client est rattaché à une agence(élément de structure), il ne peut être affecté qu'à un unique portefeuille.
+
+Plusieurs personnes du bloc applicatif Personne peuvent participer à plusieurs comptes.
+
+Le Compte d'un client correspond à un unique produit du bloc applicatif Produit.
+
+       \subsection{CONTACT}
+
+Le bloc applicatif “Contact” représente les contacts (c'est à dire les rendez-vous) entre les agents (Poste fonctionnel [Agent]) et les clients de la banque.
+
+Il contient les contacts, prévus, réalisés, les motifs de contacts et les propositions commerciales qui en ont été faites.
+
+Un certain nombre de contacts prévus sont affectés à chaque agent (Poste fonctionnel [Agent]).
+
+Cependant, un contact prévu concerne un unique client. Pour rendre les contacts le plus efficace possible, plusieurs contacts prévus peuvent être liés à un contact prévu.
+
+Un ou plusieurs motifs de contacts peuvent être traités durant un contact (prévu ou réalisé). Un contact réalisé fait participer un unique client.
+
+A l’issue de ce contact, une ou plusieurs propositions commerciales peuvent être formulées.
+
+Chacune de ces propositions portent sur une unique offre.
+
+       \subsection{AGENDA}
+
+Le bloc applicatif “Agenda” permet de gérer les agendas de chaque poste fonctionnel. Chaque agent a son agenda, dans lequel des tâches élémentaires sont planifiées sur des plages horaire (plage agenda). Les tâches élémentaires sont regroupés en des types d'activité exercées par ce poste fonctionnel(l'agent).
+
+L'agenda lui permet de connaître les tâches (avec les plages horaires) qui lui ont été réservées à chaque moment de la journée. Souvent, elles correspondent à des rencontres avec un client, dans ce cas les taches élémentaires sont des composantes d’un contact prévu et d’un futur contact réalisé, elles permettent de préparer le rendez-vous client.
+
+       \subsection{PRODUIT}
+
+Le bloc applicatif “Produit” représente l'ensemble des produits proposés par la banque. La structure segment regroupe des catégories de personnes (par exemple les retraités ou les étudiants) afin de pouvoir cibler les offres de la banque.
+
+Enfin les offres sont composées de produits que les agents pourront proposer à leurs Clients. Une Offre peut ne pas avoir de produits, par contre un produit proviendra toujours d'une offre existante.
+
+       \subsection{STRUCTURE}
+
+Le bloc applicatif “Structure” représente les agences (Elément de structure(Agence)) de la banque et plus précisément les agents (Poste fonctionnel (Agent)) avec leurs portefeuilles et les types des activités qu’ils peuvent exercer.
+
+Une agence peut dépendre de 1 ou plusieurs agences. A chacune des agences peuvent appartenir 0 ou plusieurs agents, mais un agent n’appartient qu’à une agence à la fois.
+
+Un agent peut exercé 0 ou plusieurs types d’activités; une activité peut être exercé par 0 ou plusieurs agents également.
+
+Un agent détient 0 ou plusieurs portefeuilles et un portefeuille est détenu par 0 ou un agent.
+
+       \subsection{ÉVÈNEMENT}
+
+Le bloc applicatif “Évènement” représente l’ensemble des évènements pouvant affecter un Client.
+
+Ces évènements peuvent avoir pour origine le Client (par exemple un anniversaire ou un changement de situation comme nouvel emploi…).
+
+Les évènements peuvent être aussi un changement légal du taux de rémunération d’un produit ou la création d’un nouveau produit par la banque (livret A…). Ces évènements peuvent générer ou non un motif de contact, qui peut nécessiter d’être traité par  un contact entre la banque et le client concerné par l’évènement.
 
