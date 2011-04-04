@@ -1,89 +1,10 @@
 \section{Introduction}
 
-\subsection{Objet du projet}
-
-\subsection{Contexte général du projet}
-
+	Le cas étudié porte sur "la gestion des contacts commerciaux" d'une banque. Les applications à concevoir et l'architecture du poste de travail doivent apporter une aide aux agents commerciaux.
 
 \section{Livrables}
 
-Lors de la phase d’étude préalable, des livrables bien définis doivent être fournis aux clients. Ces derniers sont remis lors d’étapes spécifiques présentées ci-après.  L’objet de cette partie est de décrire le rôle et le contenu de chacun des ces livrables.
-\subsection{Initialisation et Organisation du projet}
-
-A l’initialisation, un document doit être rédigé. Lors de cette étape, il ne s’agit pas de chercher des solutions informatiques, mais de définir le cadre dans lequel nous nous attacherons à évoluer :
-
-\paragraph{Document d’initialisation} ce document décrit notre démarche pour réaliser le projet, il présente les informations suivantes :
-    \begin{itemize}
-        \item présentation du contexte global et des objectifs clients.
-        \item les livrables attendus
-        \item le mode opératoire et le phasage
-        \item définition des tâches et planning,
-        \item l’organisation de l’équipe
-        \item l’analyse des risques
-    \end{itemize}
-
-\subsection{Expression des besoins}
-
-Cette étape doit être réalisée en interaction avec le client. Il s’agit de comprendre ses attentes afin de les reformuler dans un document : le dossier d’expression des besoins.
-
-Il contient :
-\begin{itemize}
-    \item une présentation du contexte du projet (approche métier),
-    \item les éventuelles orientations stratégiques de la MOA
-    \item une analyse de l’existant (dont le SI)
-    \item la cible fonctionnelle (modèle de référence des activités et processus de l’entreprise).
-    \item les écarts avec l’existant (les dysfonctionnements)
-    \item les attentes des partenaires
-    \item le benchmarking
-    \item les thèmes de progrès
-\end{itemize}
-
-\subsection{Construction des scénarios}
-
-Un unique document sera fourni. Dans ce rapport, deux scénarios de mise en œuvre seront envisagés : une solution spécifique et une solution standard de type ERP.
-
-Le document contiendra pour chaque scénario la démarche préconisée :
-\begin{itemize}
-    \item la nouvelle organisation
-    \item l’architecture technique
-    \item l’architecture applicative
-    \item l’architecture logicielle
-\end{itemize}
-\subsection{Évaluation des scénarios}
-
-Les deux scénarios présentés dans la partie précédente doivent ensuite être évalués et comparés afin de choisir celui que nous adopterons. Un livrable explicitant notre choix sera fourni, il doit permette au client de comprendre en quoi la solution choisie répond le mieux à son besoin.
-
-Pour chaque scénario, on va rassembler les éléments de choix, à savoir les points forts et les points faibles.
-
-
-\subsection{Restitution}
-
-C’est la dernière étape, un dossier bilan doit être livré. Le projet est également présenté oralement durant un rendez-vous client.
-
-Durant la présentation finale (powerpoint), nous exposerons notre démarche, présenterons les deux solutions et expliquerons les raisons de notre choix. Il s’agira de convaincre en mettant en avant les points forts de notre projet.
-
-En ce qui concerne le dossier bilan, il vient conclure la phase d’étude préalable. Il souligne :
-\begin{itemize}
-    \item les évolutions majeures apportées au produit livré par rapport à la définition présentée dans le dossier d’initialisation.
-    \item le plan de charges est actualisé, il met en avant les écarts et explique l’origine de ces écarts.
-    \item une  synthèse des difficultés rencontrées.
-\end{itemize}
-
-Un certain nombre de documents de suivi sont également réalisé tout au long du projet. Il sont cités ici à titre indicatif car il ne s’agit pas de livrables :
-\begin{itemize}
-    \item Fiche de suivi d’avancement des livrables intermédiaires
-    \item Journal de réunion
-    \item Fiche de suivi individuel par séance
-    \item Fiche de suivi global par séance
-    \item Tableau de bord
-\end{itemize}
-
-\section{Mode opératoire et phasage}
-
-\subsection{Choix de la méthode}
-
-Afin de réaliser cette étude préalable, nous avons opté pour la méthode MERISE, simplement parce qu'elle permet une décomposition du système d'information de l'entreprise en domaines et processus facilement analysables et donc utiles pour notre étude préalable. Nous capitalisons aussi sur le fait que l’existant est basé sur ce modèle.
-
+Tout au long du projet, des livrables bien définis doivent être fournis aux clients. L’objet de cette partie est de décrire le rôle et le contenu de chacun des ces livrables.
 \subsection{Phases}
 
 Pour Chaque phase, nous préciserons son but, son déroulement et le(s) livrable(s) attendu(s). Les phases de notre étude préalable sont les suivantes :
@@ -95,7 +16,6 @@ Pour Chaque phase, nous préciserons son but, son déroulement et le(s) livrable
     \item Cibler le champs d’étude du projet
     \item Identifier les contraintes et risques
     \item Élaborer notre démarche
-    \item Élaborer un plan d’assurance qualité
 \end{itemize}
 
 
@@ -122,121 +42,89 @@ Pour Chaque phase, nous préciserons son but, son déroulement et le(s) livrable
 \end{description}
 
 \paragraph{Livrables}
-\begin{itemize}
-    \item Dossier d’initialisation
-    \item Plan d'Assurance Qualité
-\end{itemize}
+Dossier d’initialisation
 
-\subsubsection{Expression des besoins}
+\subsubsection{Conception d'ensemble}
 
 \paragraph{But}
 \begin{itemize}
-    \item Identifier les thèmes de progrès pour restreindre les futurs scénarios tout en répondant au mieux aux attentes du client.
+    \item Identifier les évolutions de l'architecture applicative, nécessaires pour satisfaire les besoins des utilisateurs.
 \end{itemize}
 
 
 \paragraph{Déroulement}
 \begin{description}
-    \item[Contexte du projet dans l’entreprise GSTP]{
-        comprendre le modèle métier de l'entreprise, identifier les activités , les directions et services concernés par le projet ainsi que les processus stratégiques à analyser.
-    }
-    \item[Analyse de l’existant]{
-        étudier l’existant organisationnel et informatique afin d’identifier les écarts par rapport à la stratégie de l’entreprise ainsi que les processus à modifier. 
+    \item[Diagrammes d'activité]{
+        Effectuer un découpage des cas d'utilisation représentatifs en scénarios élémentaires et spécification de ces scénarios sous forme de diagramme d'activité
     }
 
-    \item[Normes et benchmarking]{
-        cette étape consiste à se renseigner sur les différentes normes et benchmarks existants, mais aussi au près des concurrents afin de comprendre leur méthode, identifier les avantages qu’ils en tirent.  Le but final étant de retenir les “best practice”.
-    }
+    \item[Découpage MCD et définition des blocs]{   
+		Il s'agit de découper le MCD en blocs applicatifs et de définir ces différents blocs}
 
-    \item[Cible de référence]{
-        il faut élaborer un modèle de référence des processus de l’entreprise à partir des dysfonctionnements relevés, des “best practice” retenue, des attentes clients,..  et indépendamment  des moyens organisationnels et informatiques.
-    }
+    \item[Dynamique de l'architecture : diagrammes des séquences]{
+		A l'aide des différents blocs applicatifs, il faut créer les diagrammes de séquences découlant des diagrammes d'activité}
+	\item[Dynamique de l'architecture : diagrammes de collaboration]{
+		Le diagramme de collaboration est la phase finale qui découle des diagrammes de séquence. Il s'agit de représenter les différents échanges entre blocs applicatifs}
+	\item[Architecture générale]{
+		L'architecture générale doit définir une première architecture vue globalement}
+	
+\end{description}
 
-    \item[Thèmes de progrès]{
-        identifier les axes d’amélioration.
+\paragraph{Livrables}
+\begin{itemize}
+    \item Dossier de conception d'ensemble
+\end{itemize}
+
+\subsubsection{Conception détaillée}
+
+\paragraph{Buts}
+
+
+
+\paragraph{Déroulement}
+\begin{description}
+    \item[EDF et IHM]{
+        Création des EDF et IHM pour chaque objet métier (Contact, Client, Agenda)
+    }
+	\item[Liste des services]{
+        Création des listes de services pour chaque objet métier (Contact, Client, Agenda)
+    }
+	\item[Spécification Service Métier et Service Objet Métier]{
     }
 \end{description}
 
 \paragraph{Livrables}
 \begin{itemize}
-    \item Dossier d’expression des besoins (EB)
+    \item Dossier de conception détaillée
 \end{itemize}
 
-\subsubsection{Analyse et conception des solutions informatiques et organisationnelles}
+\subsubsection{Architecture technique}
 
 \paragraph{Buts}
-\begin{itemize}
-    \item[Proposer deux solutions distinctes]{
-        l’une étant spécifique (construite de A à Z, pour répondre le plus précisément possible aux besoins), l’autre plus standard (basé sur des systèmes standards de type ERP, qui seront adaptés au besoin).
+
+\paragraph{Déroulement}
+\begin{description}
+	\item[Spécification de l'architecture technique volet production]{
+		topologie réseau, implantation des composants du noyau applicatif et spécification des flux applicatifs
     }
-\end{itemize}
-
-
-\paragraph{Déroulement}
-\begin{itemize}
-    \item Analyse et conception
-        \subitem Définitions des stratégies d’informations
-        \subitem Analyse générale de l’architecture applicative cible
-        \subitem Conception générale de l’architecture applicative cible
-    \item Démarche pour la mise en place d’une solution spécifique
-        \subitem Analyse des impacts organisationnels
-        \subitem Analyse des impacts informatiques (architectures technique, applicative, logicielle).
-    \item Analyse  des solutions existantes du marché/Choix d’une solution :
-        \subitem Analyse des impacts organisationnels
-        \subitem Analyse des impacts informatiques (architectures technique, applicative, logicielle).
-\end{itemize}
-
+\end{description}
 \paragraph{Livrables}
 \begin{itemize}
-    \item Dossier de description des scénarios
+    \item Architecture Technique
 \end{itemize}
 
-\subsubsection{Évaluation des scénarios}
-
-\paragraph{Buts}
-\begin{itemize}
-    \item Évaluer les différents scénarios et en faire ressortir les avantages et inconvénients de chacun afin de construire une étude comparative..
-    \item Choisir la solution qui nous semble la plus adaptée aux besoins du clients.
-\end{itemize}
-
-\paragraph{Déroulement}
-\begin{itemize}
-    \item Évaluation des solutions : il s’agit de comparer les deux scénarios et d’en voir les différences. Une présentation des avantages/inconvénients de ces scénarios semble intéressante à produire.
-    \item Choix
-\end{itemize}
-
-\paragraph{Livrables}
-\begin{itemize}
-    \item Dossier de choix
-\end{itemize}
 
 \section{Identification des activités et des tâches}
+Le tableau suivant rend compte du temps et des ressources alloués à chaque tâche. Il s'agit d'un planning prévisionnel qui peut être contraint au changement.
 
-Pour planifier l’étude préalable, il est fondamentale d’identifier l’ensemble des activités et les tâches qui y sont associées. Celles que nous avons identifié sont :
-\begin{itemize}
-    \item Suivi de projet : {\bf A1}
-        \subitem Organisation
-        \subitem Planification
-        \subitem Évaluation
-        \subitem Pilotage/Suivi
-
-    \item Gestion/Contrôle de documents : {\bf A2}
-        \subitem Diffusion PAQ
-        \subitem Respect PAQ
-        \subitem Validation des livrables
-        \subitem Organisation des réunions internes
-        \subitem Organisation des rencontres avec le client
-
-    \item Production : {\bf A3}
-        \subitem Élaboration des livrables
-        \subitem Réalisation des rapports
-        \subitem Mise en commun des informations
-\end{itemize}
-
-Pour représenter l’ordonnancement des tâches, nous allons utilisé un diagramme de GANT (fait avec MS Project) qui montrera le positionnement des tâches sur l’échelle du temps et l’utilisation des ressources (membres du projet).
-
+    \begin{center}\includegraphics[height=0.6\textheight]{h4212SuiviTache.png} \end{center}
 
 \vspace{10 mm}
+
+\section{Suivi}
+
+Le suivi des tâches s'effectue sous la plateforme RedMine. Chaque tâche y est définie (Description, temps prévu, ressources alloués). Chaque membre de l'équipe se doit d'indiquer les tâches qu'il a terminer en n'oubliant pas de 
+renseigner le temps passer dessus. Il sera ainsi possible en fin de projet de voir la différence entre le temps prévu et le temps réalisé.
 
 \section{Organisation de l'équipe}
 
@@ -261,52 +149,7 @@ Son rôle sera :
     \item Production des livrables
 \end{itemize}
 
-\subsection{Responsable communication : Naby Daouda \textsc{Diakite}}
-
-Son rôle sera :
-\begin{itemize}
-    \item Communications internes et externes
-    \item Compte rendu de réunions
-    \item Recensement des difficultés des collaborateurs
-    \item Production des livrables
-\end{itemize}
-
-\subsection{Expert ERP/Modélisation : Baptiste \textsc{lecornu}}
-
-Son rôle sera :
-\begin{itemize}
-    \item Analyse et Conception de l’architecture générale
-    \item Aide à la Modélisation et configuration des solutions 
-    \item Production livrable
-\end{itemize}
-
-
-\subsection{Expert Métier Achat : Chafik \textsc{Bachatene}}
-
-Son rôle sera :
-\begin{itemize}
-    \item Connaissance des normes et benchmarks des ERP proposant une gestion des achats
-    \item Identification des processus métiers d'achat
-    \item Production livrable
-\end{itemize}
-
-\subsection{Expert Métier Gestion de matériels : Adrien \textsc{Bachatene}}
-
-Son rôle sera :
-\begin{itemize}
-    \item Connaissance des normes et benchmarks des ERP proposant une gestion de matériels
-    \item Identification des processus métiers de gestion de matériels
-    \item Production livrable
-\end{itemize}
-
-\subsection{Expert Métier Maintenance : Thanh \textsc{Bachatene}}
-
-Son rôle sera :
-\begin{itemize}
-    \item Connaissance des normes et benchmarks des ERP proposant une gestion de la maintenance
-    \item Identification des processus métiers de gestion de la maintenance
-    \item Production livrable
-\end{itemize}
+\subsection{Membres de l'équipe : Chafik \textsc{Bachatene}, Adrien \textsc{Brochot}, Etienne \textsc{Brodu}, Naby Daouda \textsc{Diakite}}
 
 \section{Analyse des risques}
 \subsection{Risques}

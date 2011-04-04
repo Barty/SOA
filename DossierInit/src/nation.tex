@@ -8,8 +8,6 @@
 \usepackage{xspace}
 \usepackage{textcomp}
 
-\usepackage[final]{pdfpages} 
-
 \usepackage{hyperref}
 
 \usepackage[top=20mm, bottom=20mm, left=25mm, right=25mm]{geometry}
@@ -21,6 +19,8 @@
 
 \usepackage{verbatim}
 \usepackage{amsmath}
+\usepackage[table]{xcolor}
+\definecolor{bleugris}{rgb}{.2,.4,.5}
 
 \definecolor{colKeys}{rgb}{0,0,1} 
 \definecolor{colIdentifier}{rgb}{0,0,0} 
@@ -103,7 +103,6 @@
 
 \setlength{\headheight}{14pt}
 
-
 \fancyhf{}
 
 
@@ -157,23 +156,3 @@
 \title{}
 \blurb{}
 \makeatother
-
-
-\newcommand{\domain}[7]{
-%Nom de la technoligie%
-\subsection{#1}
-%Courte description de la technoligie%            
-#2
-%Saut de ligne / Informations adéquates hors consommation%          
-\\#3
-%Saut de ligne / Consommation%
-\\#4
-%Saut de ligne / Coût%
-\\#5
-%Deux sauts de ligne / Informations diverses et inutiles%  
-\\~\\#6
-%3 sauts de ligne / Conclusion : avantages et inconvénients%
-  \\~\\~\\
-  \textbf{Conclusion : }\\~\\
-#7
-}
