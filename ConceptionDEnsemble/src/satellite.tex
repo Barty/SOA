@@ -67,3 +67,81 @@ Ces évènements peuvent avoir pour origine le Client (par exemple un anniversai
 
 Les évènements peuvent être aussi un changement légal du taux de rémunération d’un produit ou la création d’un nouveau produit par la banque (livret A…). Ces évènements peuvent générer ou non un motif de contact, qui peut nécessiter d’être traité par  un contact entre la banque et le client concerné par l’évènement.
 
+
+
+
+\section{Fenêtre Contact}
+       Cette fenêtre permet la gestion commerciale des contacts. Selon le type de personne accédant à l'application : (chef d’agence ou agent) la fenêtre "Contact" propose différentes fonctionnalités :
+
+       \subsection{Chef agence}
+              Celles du chef d'agence sont :
+              \begin{itemize}
+                  \item Il peut affecter les contacts aux agents ou les réaffecter en fonction de leur disponibilité grâce au bouton "Ré-Affecter" dans la partie "Informations générales" de la fenêtre "Informations contacts".
+                  \item Il peut également sélectionner un agent de l'agence pour filtrer uniquement ses contacts ( à l'aide du bouton Liste Agent à côté du champ Agent dans la zone Recherche Contact). Ainsi le chef d’agence a la possibilité de visionner les contacts de n’importe quel agent appartenant à son agence.
+              \end{itemize}
+
+       \subsection{Agent}
+              Celles de l'agent sont :
+              \begin{itemize}
+                  \item Grâce à cette fenêtre il peut visualiser les informations des contacts qui lui sont affectés, les valider, les préparer et noter les résultats des rendez-vous.
+              \end{itemize}
+
+       \subsection{Les 2 utilisateurs}
+              Celles communes aux deux utilisateurs sont :
+              \begin{itemize}
+                  \item Le regroupement de plusieurs contacts en un seul contact. Cela à l'aide du bouton "Regrouper" (de la partie Liste contact) après avoir sélectionné les contacts à regrouper.
+                  \item La modification de l'état d'un contact à l'aide du bouton "Valider" dans la partie "Informations générales" de la fenêtre "Informations contacts", ou l'annulation d'un contact à l'aide du bouton "Annuler" dans la même partie. Lors de l'annulation d'un contact, une nouvelle fenêtre s'ouvre, en demandant d'inscrire la raison de l'annulation puis il faut valider avec le bouton "valider" de la fenêtre "annulation".
+              \end{itemize}
+
+
+       \subsection{Listes des services invoquées}
+
+\begin{tabular}{|c|c|}
+\hline
+Stimulis 
+& SM \\
+\hline
+Cliquer sur le bouton “Contact” de la page d’accueil de la gestion des contacts commerciaux puis choisir un état dans la liste “État" puis appuyer sur le bouton "Rechercher"
+& SM1 : Affichage par agence de tous les contacts prévus (pour Chef agence)\\
+\hline
+Saisir le nom d’un agent puis cliquer sur le bouton “Rechercher”
+& SM2 : Consulter les contacts de l’agent sélectionné (pour Chef agence)\\
+\hline
+Cliquer sur le bouton ”Sélectionner Agent”
+& SM3 : Consulter les agents de l'agence\\
+\hline
+Cliquer sur le bouton ”Sélectionner Client” puis choisir un client
+& SM4 : Consulter les clients de l'agence\\
+\hline
+Sélectionner un contact et cliquer sur le bouton “Réaffecter”, il faudra ensuite sélectionner un agent puis valider ce choix
+& SM5 : Affecter un contact prévu à un agent (pour chef d'agence)\\
+\hline
+Sélectionner un contact et cliquer sur le bouton “Annuler”, saisir un motif d'annulation (raison) puis valider
+& SM6 : Annuler un contact\\
+\hline
+Sélectionner des contacts e les cochant et cliquer sur le bouton “Regrouper”
+& SM7 : Regrouper des contacts\\
+\hline
+Appui sur le bouton "Entretien"
+& SM8 : Préparation et suivi entretien\\
+\hline
+\end{tabular}
+
+
+\section{Spécification de la couche noyau du bloc applicatif Contact}
+
+       \subsection{SM1 : ConsulterContactsPrevus}
+
+       \subsection{SM2 : ConsulterContactsAgent}
+
+       \subsection{SM3 : AffecterCotactPrevu}
+
+       \subsection{SM4 : AnnulerContactPrevu}
+
+       \subsection{SM5 : RegrouperContacts}
+
+
+
+
+
+
