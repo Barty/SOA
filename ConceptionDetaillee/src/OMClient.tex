@@ -1,19 +1,19 @@
-\section{Objet Métier Client}
+\section{Objet MÃ©tier Client}
 
 \begin{description}
 \item{SOMC1 Consultation Client}
 \item{SOMC2 Consultation Liste des Client}
 
-\item{SBC1 Consultation Entité Personne}
-\item{SBC1 Consultation Entité Compte}
+\item{SBC1 Consultation EntitÃ© Personne}
+\item{SBC1 Consultation EntitÃ© Compte}
 \end{description}
 
 \subsection{SM1 Liste des comptes d'un Client}
 \paragraph{SOM} SOMC1 : Consultation Client - SOMP1 : Consultation produit
-\paragraph{Entrées} id client
+\paragraph{EntrÃ©es} id client
 \paragraph{Sorties} NomClient, Adr. Client
 \paragraph{Description}
-Consultation de l'ensemble des informations client et récupération du type de compte à partir de sa fiche produit
+Consultation de l'ensemble des informations client et rÃ©cupÃ©ration du type de compte Ã  partir de sa fiche produit
 
 \begin{tabular}{|c|c|}
 \hline
@@ -23,7 +23,7 @@ Stimulis
 Cliquer sur le bouton "Contact" de la page d'accueil de la gestion des contacts commerciaux puis choisir un état dans la liste "État" puis appuyer sur le bouton "Rechercher"
 & SM1 : Affichage par agence de tous les contacts prévus (pour Chef agence)\\
 \hline
-Saisir le nom d’un agent puis cliquer sur le bouton "Rechercher"
+Saisir le nom d'un agent puis cliquer sur le bouton "Rechercher"
 & SM2 : Consulter les contacts de l'agent sélectionné (pour Chef agence)\\
 \hline
 Cliquer sur le bouton "Sélectionner Agent"
@@ -42,7 +42,7 @@ Sélectionner des contacts en les cochant et cliquer sur le bouton "Regrouper"
 & SM7 : Regrouper des contacts\\
 \hline
 Appui sur le bouton "Entretien"
-& SM8 : Préparation et suivi entretien\\
+& SM8 (PréparerContact) : Préparation et suivi entretien\\
 \hline
 Appui sur le bouton "Détails" d'un Rendez-vous, ou double cliquer sur la plage horaire associé au Rendez-vous
 & SM9 : Affichage de la fenêtre des détails d'un Rendez-vous\\
@@ -62,13 +62,13 @@ Clic sur une plage horaire libre.
 \end{tabular}
 
 
-\section{Spécification de la couche noyau du bloc applicatif Contact}
+\section{SpÃ©cification de la couche noyau du bloc applicatif Contact}
 
        \subsection{SM1 : ConsulterContactsPrevus}
 
        \subsection{SM2 : ConsulterContactsAgent}
 
-       \subsection{SM3 : AffecterCotactPrevu}
+       \subsection{SM3 : AffecterContactPrevu}
 
        \subsection{SM4 : AnnulerContactPrevu}
 
