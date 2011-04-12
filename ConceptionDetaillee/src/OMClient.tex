@@ -1,53 +1,53 @@
-\section{Objet Métier Client}
+\section{Objet MÃ©tier Client}
 
 \begin{description}
 \item{SOMC1 Consultation Client}
 \item{SOMC2 Consultation Liste des Client}
 
-\item{SBC1 Consultation Entité Personne}
-\item{SBC1 Consultation Entité Compte}
+\item{SBC1 Consultation EntitÃ© Personne}
+\item{SBC1 Consultation EntitÃ© Compte}
 \end{description}
 
 \subsection{SM1 Liste des comptes d'un Client}
 \paragraph{SOM} SOMC1 : Consultation Client - SOMP1 : Consultation produit
-\paragraph{Entrées} id client
+\paragraph{EntrÃ©es} id client
 \paragraph{Sorties} NomClient, Adr. Client
 \paragraph{Description}
-Consultation de l'ensemble des informations client et récupération du type de compte à partir de sa fiche produit
+Consultation de l'ensemble des informations client et rÃ©cupÃ©ration du type de compte Ã  partir de sa fiche produit
 
 \begin{tabular}{|c|c|}
 \hline
 Stimulis 
 & SM \\
 \hline
-Cliquer sur le bouton “Contact” de la page d’accueil de la gestion des contacts commerciaux puis choisir un état dans la liste “État" puis appuyer sur le bouton "Rechercher"
-& SM1 : Affichage par agence de tous les contacts prévus (pour Chef agence)\\
+Cliquer sur le bouton "Contact" de la page d'accueil de la gestion des contacts commerciaux puis choisir un Ã©tat dans la liste "Ã©tat" puis appuyer sur le bouton "Rechercher"
+& SM1 : Affichage par agence de tous les contacts prÃ©vus (pour Chef agence)\\
 \hline
-Saisir le nom d’un agent puis cliquer sur le bouton “Rechercher”
-& SM2 : Consulter les contacts de l’agent sélectionné (pour Chef agence)\\
+Saisir le nom d'un agent puis cliquer sur le bouton "Rechercher"
+& SM2 : Consulter les contacts de lï¿½agent sï¿½lectionnï¿½ (pour Chef agence)\\
 \hline
-Cliquer sur le bouton ”Sélectionner Agent”
+Cliquer sur le bouton ï¿½Sï¿½lectionner Agentï¿½
 & SM3 : Consulter les agents de l'agence\\
 \hline
-Cliquer sur le bouton ”Sélectionner Client” puis choisir un client
+Cliquer sur le bouton ï¿½Sï¿½lectionner Clientï¿½ puis choisir un client
 & SM4 : Consulter les clients de l'agence\\
 \hline
-Sélectionner un contact et cliquer sur le bouton “Réaffecter”, il faudra ensuite sélectionner un agent puis valider ce choix
-& SM5 : Affecter un contact prévu à un agent (pour chef d'agence)\\
+Sï¿½lectionner un contact et cliquer sur le bouton ï¿½Rï¿½affecterï¿½, il faudra ensuite sï¿½lectionner un agent puis valider ce choix
+& SM5 : Affecter un contact prï¿½vu ï¿½ un agent (pour chef d'agence)\\
 \hline
-Sélectionner un contact et cliquer sur le bouton “Annuler”, saisir un motif d'annulation (raison) puis valider
+Sï¿½lectionner un contact et cliquer sur le bouton ï¿½Annulerï¿½, saisir un motif d'annulation (raison) puis valider
 & SM6 : Annuler un contact\\
 \hline
-Sélectionner des contacts e les cochant et cliquer sur le bouton “Regrouper”
+Sï¿½lectionner des contacts e les cochant et cliquer sur le bouton ï¿½Regrouperï¿½
 & SM7 : Regrouper des contacts\\
 \hline
 Appui sur le bouton "Entretien"
-& SM8 : Préparation et suivi entretien\\
+& SM8 : Prï¿½paration et suivi entretien\\
 \hline
 \end{tabular}
 
 
-\section{Spécification de la couche noyau du bloc applicatif Contact}
+\section{Spï¿½cification de la couche noyau du bloc applicatif Contact}
 
        \subsection{SM1 : ConsulterContactsPrevus}
 
