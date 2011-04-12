@@ -1,0 +1,60 @@
+\section{Objet Métier Client}
+
+\begin{description}
+\item{SOMC1 Consultation Client}
+\item{SOMC2 Consultation Liste des Client}
+
+\item{SBC1 Consultation Entité Personne}
+\item{SBC1 Consultation Entité Compte}
+\end{description}
+
+\subsection{SM1 Liste des comptes d'un Client}
+\paragraph{SOM} SOMC1 : Consultation Client - SOMP1 : Consultation produit
+\paragraph{Entrées} id client
+\paragraph{Sorties} NomClient, Adr. Client
+\paragraph{Description}
+Consultation de l'ensemble des informations client et récupération du type de compte à partir de sa fiche produit
+
+\begin{tabular}{|c|c|}
+\hline
+Stimulis 
+& SM \\
+\hline
+Cliquer sur le bouton “Contact” de la page d’accueil de la gestion des contacts commerciaux puis choisir un état dans la liste “État" puis appuyer sur le bouton "Rechercher"
+& SM1 : Affichage par agence de tous les contacts prévus (pour Chef agence)\\
+\hline
+Saisir le nom d’un agent puis cliquer sur le bouton “Rechercher”
+& SM2 : Consulter les contacts de l’agent sélectionné (pour Chef agence)\\
+\hline
+Cliquer sur le bouton ”Sélectionner Agent”
+& SM3 : Consulter les agents de l'agence\\
+\hline
+Cliquer sur le bouton ”Sélectionner Client” puis choisir un client
+& SM4 : Consulter les clients de l'agence\\
+\hline
+Sélectionner un contact et cliquer sur le bouton “Réaffecter”, il faudra ensuite sélectionner un agent puis valider ce choix
+& SM5 : Affecter un contact prévu à un agent (pour chef d'agence)\\
+\hline
+Sélectionner un contact et cliquer sur le bouton “Annuler”, saisir un motif d'annulation (raison) puis valider
+& SM6 : Annuler un contact\\
+\hline
+Sélectionner des contacts e les cochant et cliquer sur le bouton “Regrouper”
+& SM7 : Regrouper des contacts\\
+\hline
+Appui sur le bouton "Entretien"
+& SM8 : Préparation et suivi entretien\\
+\hline
+\end{tabular}
+
+
+\section{Spécification de la couche noyau du bloc applicatif Contact}
+
+       \subsection{SM1 : ConsulterContactsPrevus}
+
+       \subsection{SM2 : ConsulterContactsAgent}
+
+       \subsection{SM3 : AffecterCotactPrevu}
+
+       \subsection{SM4 : AnnulerContactPrevu}
+
+       \subsection{SM5 : RegrouperContacts}
