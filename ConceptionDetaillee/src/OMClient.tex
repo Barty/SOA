@@ -48,12 +48,147 @@ Clic sur une plage horaire libre.
 
 \section{SpÃ©cification de la couche noyau du bloc applicatif Contact}
 
-       \subsection{SM1 : ConsulterContactsPrevus}
 
-       \subsection{SM2 : ConsulterContactsAgent}
-
-       \subsection{SM3 : AffecterContactPrevu}
-
-       \subsection{SM4 : AnnulerContactPrevu}
-
-       \subsection{SM5 : RegrouperContacts}
+\subsection{Service Métiers}
+\subsubsection{SM1: ConsulterContactsPrevus (pour chef agence)}
+\begin{itemize}
+\item E : idClient
+\item S : liste $<$idContactPrevu, motif, nomClient, nomAgent, datesRDV$>$
+\item SOM utilisés: 	
+\begin{itemize}		
+\item SOM1 : ConsulterClients (Bloc Client)
+\item SOM2 : ConsulterContactsPrevus (Bloc Contact)
+\item SOM3 : AgentAffecter (Bloc Structure)
+\item SOM4 : ConsulterInfosClient (Bloc Client)	
+\end{itemize}		
+\item Procédure : 	
+\begin{itemize}		
+\item Recherche des clients de l’agence. (SOM1)
+\item Pour chaque client
+\begin{itemize}
+\item Recherche la liste des contacts prévus et les motifs (SOM2)
+\item Recherche de l’agent affecté. (SOM3)
+\item Recherche du nom (SOM4)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\subsubsection{SM2 : ConsulterContactsAgent}
+\begin{itemize}
+\item E : idAgent, idClient, etatContact 
+\item S : liste  $<$idContactPrevu, motif, nomClient, nomAgent, datesRDV$>$
+\item SOM utilisés: 	
+\begin{itemize}		
+\item SOM2 : ConsulterContactsPrévus (Bloc Contact)
+\item SOM4 : ConsulterInfosClient (Bloc Client)
+\item SOM5 : ConsulterDatesRDV (Bloc Agenda)
+\end{itemize}		
+\item Procédure : 	
+\begin{itemize}		
+\item Recherche les contacts prévus (avec motifs, dates RDV) pour un agent donné (SOM2)
+\item Pour chaque contact
+\begin{itemize}
+\item Recherche le nom du client (SOM4)
+\item Recherche les dates de RDV (SOM5)
+\end{itemize}.
+\end{itemize}.
+\end{itemize}
+\subsubsection{SM3 : AffecterContactPrevu}
+\begin{itemize}
+\item E : idContact, idAgent 	
+\item S : Aucune (L’état du contact passe de prévu à affecté)
+\item SOM utilisés: 	
+\begin{itemize}		
+\item SOM6 : AffecterContactPrevu	
+\end{itemize}		
+\item Procédure : 	
+\begin{itemize}		
+\item Associe à un agent un contact prévu (SOM6)
+\end{itemize}.
+\end{itemize}
+\subsubsection{SM 4: AnnulerContactPrévu}
+\begin{itemize}
+\item E : idContact, raison annulation
+\item S : validation d'action
+\item SOM utilisés: 	
+\begin{itemize}		
+\item SOM7: AnnulerContactPrevu (idContact,Raison) (bloc Contact)	
+\end{itemize}		
+\item Procédure : 	
+\begin{itemize}		
+\item Changer l’état du contact ayant comme identification : idContact à l’état Annulé en utilisant SB MajEtat
+\end{itemize}.
+\end{itemize}
+\subsubsection{SM5 : RegrouperContacts}
+\begin{itemize}
+\item E : list $<$listeIdContact$>$
+\item S : validation d'action
+\item SOM utilisés: 	
+\begin{itemize}		
+\item SOM8: RegrouperContacts(list $<$listeIdContact$>$) [Bloc Contact]		
+\end{itemize}	
+\item Procédure : 	
+\begin{itemize}		
+\item Regrouper tous les contacts dont id dans la liste passée
+\end{itemize}.
+\end{itemize}
+\subsection{Service Objets Metiers}
+\subsubsection{SOM1: ConsulterClients }
+\begin{itemize}
+\item Bloc: Client
+\end{itemize}
+\subsubsection{SOM2 : RegrouperContacts}
+\begin{itemize}
+\item Bloc:Contact
+\item Entité(s): Contact prévu, Motif contact, Client, Agenda
+\item E : idClient
+\item S : agenda	
+\item Procédure : 	
+\begin{itemize}		
+\item SB1 : ListeContactPrevus
+\item SB2 : ConsulterMotif
+\item SB3 : RechercherDatesRDV
+\end{itemize}.
+\end{itemize}
+\subsubsection{SOM3 : AgentAffecter}
+\begin{itemize}
+\item Bloc: Structure
+\end{itemize}
+\subsubsection{SOM4: ConsulterInfosClient}
+\begin{itemize}
+\item Bloc: Client
+\end{itemize}
+\subsubsection{SOM5: ConsulterDatesRDV}
+\begin{itemize}
+\item Bloc: Agenda
+\end{itemize}
+\subsubsection{SM6 : AffecterContactPrevu}
+\begin{itemize}
+\item Bloc : Contact
+\item Entité(s): Contact prévu
+\item E : id contact, id agent
+\item S : Aucune (L’état du contact passe de prévu à affecté)
+\item Procédure : 	
+\begin{itemize}		
+\item Mettre l'association Concerner la valeur corespondante (idAgent, idContact)
+\end{itemize}
+\end{itemize}
+\subsubsection{SM7 : SOM7: AnnulerContactPrevu}
+\begin{itemize}
+\item Bloc : Contact
+\item Entité(s): contactPrévu
+\item E : id contact, id agent
+\item S : Validation d'action
+\begin{itemize}		
+\item SB: MajEtat(Annulé)[bloc Contact]: passer l'état du contact id en Annulé
+\end{itemize}
+\end{itemize}
+\subsubsection{ SOM8: RegrouperContacts}
+\begin{itemize}
+\item Bloc : Contact
+\item Entité(s): Contact prévu
+\item E :list $<$listeIdContact $>$\item S : Aucune (L’état du contact passe de prévu à affecté)
+\item Procédure : 	
+\begin{itemize}		
+\item Grouper les contacts ayant comme id passés dans paramètre.
+\end{itemize}
+\end{itemize}
