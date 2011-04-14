@@ -1,73 +1,71 @@
-
 \begin{tabular}{|c|c|}
 \hline
 Stimulis 
 & SM \\
 \hline
-Cliquer sur le bouton "Contact" de la page d'accueil de la gestion des contacts commerciaux puis choisir un �tat dans la liste "�tat" puis appuyer sur le bouton "Rechercher"
-& SM1 : Affichage par agence de tous les contacts pr�vus (pour Chef agence)\\
+Cliquer sur le bouton "Contact" de la page d'accueil de la gestion des contacts commerciaux puis choisir un �tat dans la liste "�tat" puis appuyer sur le bouton "Rechercher"
+& SM1 : Affichage par agence de tous les contacts pr�vus (pour Chef agence)\\
 \hline
 Saisir le nom d'un agent puis cliquer sur le bouton "Rechercher"
-& SM2 : Consulter les contacts de l'agent s�lectionn� (pour Chef agence)\\
+& SM2 : Consulter les contacts de l'agent s�lectionn� (pour Chef agence)\\
 \hline
-Cliquer sur le bouton "S�lectionner Agent"
+Cliquer sur le bouton "S�lectionner Agent"
 & SM3 : Consulter les agents de l'agence\\
 \hline
-Cliquer sur le bouton "S�lectionner Client" puis choisir un client
+Cliquer sur le bouton "S�lectionner Client" puis choisir un client
 & SM4 : Consulter les clients de l'agence\\
 \hline
-S�lectionner un contact et cliquer sur le bouton "R�affecter", il faudra ensuite s�lectionner un agent puis valider ce choix
-& SM5 : Affecter un contact pr�vu � un agent (pour chef d'agence)\\
+S�lectionner un contact et cliquer sur le bouton "R�affecter", il faudra ensuite s�lectionner un agent puis valider ce choix
+& SM5 : Affecter un contact pr�vu � un agent (pour chef d'agence)\\
 \hline
-S�lectionner un contact et cliquer sur le bouton "Annuler", saisir un motif d'annulation (raison) puis valider
+S�lectionner un contact et cliquer sur le bouton "Annuler", saisir un motif d'annulation (raison) puis valider
 & SM6 : Annuler un contact\\
 \hline
-S�lectionner des contacts en les cochant et cliquer sur le bouton "Regrouper"
+S�lectionner des contacts en les cochant et cliquer sur le bouton "Regrouper"
 & SM7 : Regrouper des contacts\\
 \hline
 Appui sur le bouton "Entretien"
-& SM8 (Pr�parerContact) : Pr�paration et suivi entretien\\
+& SM8 (Pr�parerContact) : Pr�paration et suivi entretien\\
 \hline
-Appui sur le bouton "D�tails" d'un Rendez-vous, ou double cliquer sur la plage horaire associ� au Rendez-vous
-& SM9 : Affichage de la fen�tre des d�tails d'un Rendez-vous\\
+Appui sur le bouton "D�tails" d'un Rendez-vous, ou double cliquer sur la plage horaire associ� au Rendez-vous
+& SM9 : Affichage de la fen�tre des d�tails d'un Rendez-vous\\
 \hline
-Appui sur le bouton "Modifier" dans la f�netre d�tails d'un Rendez-vous
-& SM9 : Passage en mode �dition du Rendez-vous\\
+Appui sur le bouton "Modifier" dans la f�netre d�tails d'un Rendez-vous
+& SM9 : Passage en mode �dition du Rendez-vous\\
 \hline
-Appui sur le bouton "Supprimer" dans la f�netre d�tails d'un Rendez-vous, ou glisser la plage horaire associ� en dehors de la fen�tre
-& SM9 : Suppr�ssion du Rendez-vous\\
+Appui sur le bouton "Supprimer" dans la f�netre d�tails d'un Rendez-vous, ou glisser la plage horaire associ� en dehors de la fen�tre
+& SM9 : Suppr�ssion du Rendez-vous\\
 \hline
-Appui sur le bouton "R�affecter" dans la f�netre d�tails d'un Rendez-vous
-& SM9 : R�affectation d'une Rendez-vous\\
+Appui sur le bouton "R�affecter" dans la f�netre d�tails d'un Rendez-vous
+& SM9 : R�affectation d'une Rendez-vous\\
 \hline
 Clic sur une plage horaire libre.
-& SM9 : Cr�ation d'un rendez-vous\\
+& SM9 : Cr�ation d'un rendez-vous\\
 \hline
 \end{tabular}
 
 
-\section{Spécification de la couche noyau du bloc applicatif Contact}
+\section{SpÃ©cification de la couche noyau du bloc applicatif Contact}
 
-
-\subsection{Service M�tiers}
+\subsection{Service MÃ©tiers}
 \subsubsection{SM1: ConsulterContactsPrevus (pour chef agence)}
 \begin{itemize}
 \item E : idClient
 \item S : liste $<$idContactPrevu, motif, nomClient, nomAgent, datesRDV$>$
-\item SOM utilis�s: 	
+\item SOM utilisÃ©s: 	
 \begin{itemize}		
 \item SOM1 : ConsulterClients (Bloc Client)
 \item SOM2 : ConsulterContactsPrevus (Bloc Contact)
 \item SOM3 : AgentAffecter (Bloc Structure)
 \item SOM4 : ConsulterInfosClient (Bloc Client)	
 \end{itemize}		
-\item Proc�dure : 	
+\item ProcÃ©dure : 	
 \begin{itemize}		
-\item Recherche des clients de l�agence. (SOM1)
+\item Recherche des clients de lâ€™agence. (SOM1)
 \item Pour chaque client
 \begin{itemize}
-\item Recherche la liste des contacts pr�vus et les motifs (SOM2)
-\item Recherche de l�agent affect�. (SOM3)
+\item Recherche la liste des contacts prÃ©vus et les motifs (SOM2)
+\item Recherche de lâ€™agent affectÃ©. (SOM3)
 \item Recherche du nom (SOM4)
 \end{itemize}
 \end{itemize}
@@ -76,15 +74,15 @@ Clic sur une plage horaire libre.
 \begin{itemize}
 \item E : idAgent, idClient, etatContact 
 \item S : liste  $<$idContactPrevu, motif, nomClient, nomAgent, datesRDV$>$
-\item SOM utilis�s: 	
+\item SOM utilisÃ©s: 	
 \begin{itemize}		
-\item SOM2 : ConsulterContactsPr�vus (Bloc Contact)
+\item SOM2 : ConsulterContactsPrÃ©vus (Bloc Contact)
 \item SOM4 : ConsulterInfosClient (Bloc Client)
 \item SOM5 : ConsulterDatesRDV (Bloc Agenda)
 \end{itemize}		
-\item Proc�dure : 	
+\item ProcÃ©dure : 	
 \begin{itemize}		
-\item Recherche les contacts pr�vus (avec motifs, dates RDV) pour un agent donn� (SOM2)
+\item Recherche les contacts prÃ©vus (avec motifs, dates RDV) pour un agent donnÃ© (SOM2)
 \item Pour chaque contact
 \begin{itemize}
 \item Recherche le nom du client (SOM4)
@@ -95,100 +93,152 @@ Clic sur une plage horaire libre.
 \subsubsection{SM3 : AffecterContactPrevu}
 \begin{itemize}
 \item E : idContact, idAgent 	
-\item S : Aucune (L��tat du contact passe de pr�vu � affect�)
-\item SOM utilis�s: 	
+\item S : Aucune (Lâ€™Ã©tat du contact passe de prÃ©vu Ã  affectÃ©)
+\item SOM utilisÃ©s: 	
 \begin{itemize}		
 \item SOM6 : AffecterContactPrevu	
 \end{itemize}		
-\item Proc�dure : 	
+\item ProcÃ©dure : 	
 \begin{itemize}		
-\item Associe � un agent un contact pr�vu (SOM6)
+\item Associe Ã  un agent un contact prÃ©vu (SOM6)
 \end{itemize}.
 \end{itemize}
-\subsubsection{SM 4: AnnulerContactPr�vu}
+\subsubsection{SM 4: AnnulerContactPrÃ©vu}
 \begin{itemize}
 \item E : idContact, raison annulation
 \item S : validation d'action
-\item SOM utilis�s: 	
+\item SOM utilisÃ©s: 	
 \begin{itemize}		
 \item SOM7: AnnulerContactPrevu (idContact,Raison) (bloc Contact)	
 \end{itemize}		
-\item Proc�dure : 	
+\item ProcÃ©dure : 	
 \begin{itemize}		
-\item Changer l��tat du contact ayant comme identification : idContact � l��tat Annul� en utilisant SB MajEtat
+\item Changer lâ€™Ã©tat du contact ayant comme identification : idContact Ã  lâ€™Ã©tat AnnulÃ© en utilisant SB MajEtat
 \end{itemize}.
 \end{itemize}
 \subsubsection{SM5 : RegrouperContacts}
 \begin{itemize}
 \item E : list $<$listeIdContact$>$
 \item S : validation d'action
-\item SOM utilis�s: 	
+\item SOM utilisÃ©s: 	
 \begin{itemize}		
 \item SOM8: RegrouperContacts(list $<$listeIdContact$>$) [Bloc Contact]		
 \end{itemize}	
-\item Proc�dure : 	
+\item ProcÃ©dure : 	
 \begin{itemize}		
-\item Regrouper tous les contacts dont id dans la liste pass�e
+\item Regrouper tous les contacts dont id dans la liste passÃ©e
 \end{itemize}.
 \end{itemize}
+
+\subsubsection{SM6: GenererContact}
+\begin{itemize}
+\item E : aucun
+\item S : aucun
+\item SOM utilisÃ©s: 	
+\begin{itemize}		
+\item SOM9 : recupererDerniersEvenements() (Bloc Evenement)
+\item SOM10 : recupererClientsLies (Evenement) (Bloc Evenement)
+\item SOM11 : creerContactPrevu (Bloc Client)	
+\end{itemize}		
+\item ProcÃ©dure : 	
+\begin{itemize}		
+\item RÃ©cuperer tous les Ã©vÃ©nÃ©ments rÃ©cemment captÃ©s.(SOM9)
+\item Pour chaque Ã©vÃ©nement captÃ©
+\begin{itemize}
+\item RÃ©cupÃ©rer les clients liÃ© Ã  cet Ã©vÃ©nement. (SOM10)
+\item GÃ©nÃ©rer un motif contact (SOM11)
+\item CrÃ©er le contact prÃ©vu Ã  partir de ces donnÃ©es gÃ©nÃ©rÃ©es (SOM12)
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
 \subsection{Service Objets Metiers}
 \subsubsection{SOM1: ConsulterClients }
 \begin{itemize}
 \item Bloc: Client
+\item RÃ´le: Consulter la liste de clients liÃ© Ã  l'agent donnÃ©
 \end{itemize}
 \subsubsection{SOM2 : RegrouperContacts}
 \begin{itemize}
 \item Bloc:Contact
-\item Entit�(s): Contact pr�vu, Motif contact, Client, Agenda
+\item EntitÃ©(s): Contact prÃ©vu, Motif contact, Client, Agenda
 \item E : idClient
 \item S : agenda	
-\item Proc�dure : 	
+\item ProcÃ©dure : 	
 \begin{itemize}		
 \item SB1 : ListeContactPrevus
 \item SB2 : ConsulterMotif
 \item SB3 : RechercherDatesRDV
 \end{itemize}.
 \end{itemize}
-\subsubsection{SOM3 : AgentAffecter}
+\subsubsection{SOM3 : AgentAffecte}
 \begin{itemize}
 \item Bloc: Structure
+\item RÃ´le: Donner l'agent affectÃ© au client donnÃ©
 \end{itemize}
 \subsubsection{SOM4: ConsulterInfosClient}
 \begin{itemize}
 \item Bloc: Client
+\item RÃ´le: Consulter les informations concernant le client donnÃ©
 \end{itemize}
 \subsubsection{SOM5: ConsulterDatesRDV}
 \begin{itemize}
 \item Bloc: Agenda
+\item RÃ´le: Consulter les date de rendez-vous d'un contact donnÃ©
 \end{itemize}
 \subsubsection{SM6 : AffecterContactPrevu}
 \begin{itemize}
 \item Bloc : Contact
-\item Entit�(s): Contact pr�vu
+\item EntitÃ©(s): Contact prÃ©vu
 \item E : id contact, id agent
-\item S : Aucune (L��tat du contact passe de pr�vu � affect�)
-\item Proc�dure : 	
+\item S : Aucune (Lâ€™Ã©tat du contact passe de prÃ©vu Ã  affectÃ©)
+\item ProcÃ©dure : 	
 \begin{itemize}		
 \item Mettre l'association Concerner la valeur corespondante (idAgent, idContact)
 \end{itemize}
 \end{itemize}
-\subsubsection{SM7 : SOM7: AnnulerContactPrevu}
+\subsubsection{SOM7: AnnulerContactPrevu}
 \begin{itemize}
 \item Bloc : Contact
-\item Entit�(s): contactPr�vu
+\item EntitÃ©(s): contactPrÃ©vu
 \item E : id contact, id agent
 \item S : Validation d'action
 \begin{itemize}		
-\item SB: MajEtat(Annul�)[bloc Contact]: passer l'�tat du contact id en Annul�
+\item SB: MajEtat(AnnulÃ©)[bloc Contact]: passer l'Ã©tat du contact id en AnnulÃ©
 \end{itemize}
 \end{itemize}
-\subsubsection{ SOM8: RegrouperContacts}
+\subsubsection{SOM8: RegrouperContacts}
 \begin{itemize}
 \item Bloc : Contact
-\item Entit�(s): Contact pr�vu
-\item E :list $<$listeIdContact $>$\item S : Aucune (L��tat du contact passe de pr�vu � affect�)
-\item Proc�dure : 	
+\item EntitÃ©(s): Contact prÃ©vu
+\item E :list $<$listeIdContact $>$\item S : Aucune (Lâ€™Ã©tat du contact passe de prÃ©vu Ã  affectÃ©)
+\item ProcÃ©dure : 	
 \begin{itemize}		
-\item Grouper les contacts ayant comme id pass�s dans param�tre.
+\item Grouper les contacts ayant comme id passÃ©s dans paramÃ¨tre.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{SOM9 : recupererDerniersEvenements}
+\begin{itemize}
+\item Bloc : Evenement
+\item RÃ´le: Donner la liste de Ã©vÃ©nements les plus rÃ©cemment captÃ©s
+\end{itemize}
+
+\subsubsection{SOM10 : recupererListClientsLies}
+\begin{itemize}
+\item Bloc : Evenement
+\item RÃ´le: Donner la liste de clients liÃ©s Ã  un Ã©vÃ©nement
+\end{itemize}
+
+\subsubsection{SOM11 : creerContactPrevu}
+\begin{itemize}
+\item Bloc : Contact
+\item RÃ´le: CrÃ©er un contact prÃ©vu 
+\item EntitÃ©(s): motif, client, contact
+\item E :  Ã©vÃ©nement, liste clients
+\item S : contact prÃ©vu
+\begin{itemize}		
+\item SB: genererMotifContact(evenement): GÃ©nÃ©rer le motif contact Ã  partir d'un Ã©vÃ©nement
+\item SB: crÃ©er contact prÃ©vu Ã  partir du motif fourni et de la liste de clients donnÃ©e
 \end{itemize}
 \end{itemize}
