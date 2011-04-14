@@ -1,33 +1,33 @@
 \section{Architecture Physique}
 
-    L'architecture physique reste schematique dû au manque d'information sur les lieux d'implantation finaux.
+    L'architecture physique reste schématique dû au manque d'information sur les lieux d'implantation finaux.
     Cependant, elle à été conçu pour être extensible, et adaptable à toutes les situations possible.
 
     \subsection{Serveurs}
         
         \subsubsection{Siège centrale}
         
-            Le siège centrale est unique, il héberge des serveurs capable de stoquer toutes les données concernant les clients, les évenements, les contacts et la structure.
-            En détails, les serveurs de donnée ont la capacité de stoquer toutes ces données, elles sont sauvegardé sur un serveur de secours afin de minimiser le risque de perte de données ; les serveurs d'applets sont capable de tenir la charge provenant de toutes les agences.
+            Le siège centrale est unique, il héberge des serveurs capable de stoker toutes les données concernant les clients, les événements, les contacts et la structure.
+            En détails, les serveurs de donnée ont la capacité de stoker toutes ces données, elles sont sauvegardé sur un serveur de secours afin de minimiser le risque de perte de données ; les serveurs d'applets sont capable de tenir la charge provenant de toutes les agences.
             
-            Le manque d'information concernant l'importance des données et des agents nous empèche de dimensionner précisément l'installation.
+            Le manque d'information concernant l'importance des données et des agents nous empêche de dimensionner précisément l'installation.
         
         \subsubsection{Agences & Sous-agences}
         
-            Chaque agence et sous-agence gère son propore agenda en local. Elle posséde donc son propre serveur de donnée et d'applet pour gérer cette composante logicielle. De la même manière que pour le siège centrale, un serveur de sauvegarde permet de minimiser les risques de perte de données.            
+            Chaque agence et sous-agence gère son propre agenda en local. Elle possède donc son propre serveur de donnée et d'applet pour gérer cette composante logicielle. De la même manière que pour le siège centrale, un serveur de sauvegarde permet de minimiser les risques de perte de données.            
     
     \subsection{Réseaux}
     
-        L'interconnection nécessaire entre toutes ces agences géographiquement éloigné, est mis en place à l'aide d'une solution VPN.
+        L'interconnexion nécessaire entre toutes ces agences géographiquement éloigné, est mis en place à l'aide d'une solution VPN.
         Ainsi, en supposant le réseaux internet infaillible, les flux de données entre les agences sont transparents pour l'utilisateur, et sécurisés.
-        Pour ce faire, chaque agence possède son propre serveur VPN permettant cette interconnection.
+        Pour ce faire, chaque agence possède son propre serveur VPN permettant cette interconnexion.
 
 \section{Découpage en bloc}
     
     Le système mis en place se découpera en briques logicielles indépendantes, mais interconnecté.
-    Parmis ces briques logicielles, seule l'agenda est hébérgé localement aux agence, toutes les autres briques logicielles - clients, contacts, évenement, structures - sont centralisés au siège centrale pour des question de sécurités et d'intégrité des données.
+    Parmi ces briques logicielles, seule l'agenda est hébergé localement aux agence, toutes les autres briques logicielles - clients, contacts, événement, structures - sont centralisés au siège centrale pour des question de sécurités et d'intégrité des données.
     
-    Ainsi, les agences devront intérroger systèmatiquement le site centrale pour consulter les fichiers clients, ou les contacts.
+    Ainsi, les agences devront interroger systématiquement le site centrale pour consulter les fichiers clients, ou les contacts.
     Le désavantage principale est l'impossibilité d'accéder aux données en cas de coupure réseaux.
     L'avantage principale, est d'avoir un contrôle plus strict sur ces données sensibles, et de conserver l'intégrité des données entres les différentes agences.
     
